@@ -82,3 +82,39 @@ def average_images_per_class(train_data, class_names):
     plt.suptitle("Average of each class in the dataset")
     plt.tight_layout()
     plt.show()
+
+def plot_loss(history):
+    plt.plot(history.history['loss'], label='loss')
+    plt.plot(history.history['val_loss'], label='val_loss')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+def plot_accuracy(history):
+    plt.plot(history.history['accuracy'], label='accuracy')
+    plt.plot(history.history['val_accuracy'], label='val_accuracy')
+    plt.xlabel('Epoch')
+    plt.ylabel('Accuracy')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+def plot_loss_accuracy(history):
+    fig, axs = plt.subplots(2)
+    axs[0].plot(history.history['loss'], label='loss')
+    axs[0].plot(history.history['val_loss'], label='val_loss')
+    axs[0].set_xlabel('Epoch')
+    axs[0].set_ylabel('Loss')
+    axs[0].legend()
+    axs[0].grid(True)
+
+    axs[1].plot(history.history['accuracy'], label='accuracy')
+    axs[1].plot(history.history['val_accuracy'], label='val_accuracy')
+    axs[1].set_xlabel('Epoch')
+    axs[1].set_ylabel('Accuracy')
+    axs[1].legend()
+    axs[1].grid(True)
+
+    plt.show()
