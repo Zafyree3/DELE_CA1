@@ -1,0 +1,5 @@
+# CNN
+Undersampling
+1. Create undersampled df
+2. convert into dataset
+3. train model
